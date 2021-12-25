@@ -15,12 +15,24 @@
 <!-- модальное окно -->
     <div class="backdrop is-hidden" data-modal>
         <div class="modal">
-            <p>какое-то содержимое<br>модального окна</p>
-        <button class="close-modal" type="button" data-modal-close>
-            <svg width="11" height="11">
-                <use href="./Images/symbol-defs.svg#icon-close"></use>
-            </svg>
-        </button>
+            <h2 class="modal-title">Оставьте свои данные, мы вам перезвоним</h2>
+            <form class="modal-form">
+                <label for="name" class="form-field"><span class="form-title">Имя</span>
+                    <input type="name" name="name" id="name">
+                </label>
+                <label for="tel" class="form-field"><span class="form-title">Телефон</span>
+                    <input type="tel" name="tel" id="tel">
+                </label>
+                <label for="email" class="form-field"><span class="form-title">Почта</span>
+                    <input type="email" name="email" id="email">
+                </label>
+                
+            </form>
+            <button class="close-modal" type="button" data-modal-close>
+                <svg width="11" height="11">
+                    <use href="./Images/symbol-defs.svg#icon-close"></use>
+                </svg>
+            </button>
         </div>
     </div>
 <!----- навигация ----->

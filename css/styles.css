@@ -53,7 +53,8 @@ img {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
-  transition: visibiliti, opacity 250ms var(--transition-timing-function);
+  transition: visibiliti 250ms var(--transition-timing-function),
+    opacity 250ms var(--transition-timing-function);
 }
 .backdrop.is-hidden {
   opacity: 0;
@@ -90,8 +91,8 @@ img {
   background-color: #fff;
   border-radius: 50%;
 
-  transition-property: all;
-  transition-duration: 1000ms;
+  transition-property: opacity;
+  transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* -------- header -------- */
@@ -140,7 +141,7 @@ img {
   letter-spacing: 0.02em;
   color: var(--primary-text-color);
   text-decoration: none;
-  transition-property: var(--accent-color);
+  transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -183,7 +184,7 @@ img {
   letter-spacing: 0.02em;
   color: var(--paragraph-text-color);
   text-decoration: none;
-  transition-property: var(--accent-color);
+  transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -403,7 +404,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition-property: var(--accent-color);
+  transition-property: background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -415,7 +416,7 @@ img {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  transition-property: var(--accent-color);
+  transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -454,7 +455,7 @@ img {
   align-items: center;
   color: var(--rectangle-color);
   fill: var(--rectangle-color);
-  transition-property: var(--accent-color);
+  transition-property: fill, color, border;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -486,7 +487,7 @@ img {
   text-align: center;
   color: var(--primary-text-color);
   background-color: var(--secondary-background-color);
-  transition-property: var(--accent-color), var(--primary-background-color);
+  transition-property: color, background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -539,6 +540,9 @@ img {
 .card-set .link:hover .wrapper-text {
   opacity: 1;
 }
+.card-set .link:focus .wrapper-text {
+  opacity: 1;
+}
 .wrapper::before {
   content: "";
   position: absolute;
@@ -551,6 +555,10 @@ img {
   transform: translateY(100%);
 }
 .card-set .link:hover .wrapper::before {
+  opacity: 1;
+  transform: translateY(0);
+}
+.card-set .link:focus .wrapper::before {
   opacity: 1;
   transform: translateY(0);
 }
@@ -644,7 +652,7 @@ address {
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
   fill: var(--primary-background-color);
-  transition-property: var(--accent-color);
+  transition-property: background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -656,39 +664,10 @@ address {
   display: block;
   margin-left: 70px;
 }
-.subscribe-box .text {
-  margin-bottom: 20px;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: var(--primary-background-color);
-}
-.subscribe-field {
-}
-.subscribe-button {
+.footer .subscribe-form {
   display: flex;
-  width: 200px;
-  height: 50px;
-  border-radius: 4px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-
-  padding: 10px 28px;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.87;
-  letter-spacing: 0.06em;
-  color: var(--primary-background-color);
-  background-color: var(--accent-color);
-
-  transform: scale(1);
-  transition: transform 250ms var(--transition-timing-function);
 }
-.subscribe-box .send {
-  margin-left: 10px;
-}
-.subscribe-input {
+.footer .subscribe-input {
   width: 358px;
   height: 50px;
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -696,11 +675,44 @@ address {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
   background-color: inherit;
+  padding-left: 16px;
+  margin-right: 12px;
 }
-.subscribe-form {
-  display: flex;
+.footer .subscribe-box {
   margin-left: 93px;
 }
+.subscribe-box .text {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--primary-background-color);
+  margin-bottom: 20px;
+}
+.footer .subscribe-button {
+  width: 200px;
+  height: 50px;
+  background: #2196f3;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: white;
+  margin-top: auto;
+}
+.footer .send {
+  margin-left: 10px;
+}
+.footer
+.footer
+
 
 /* -------------------hidden------------------ */
 .hidden {
