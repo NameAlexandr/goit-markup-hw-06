@@ -15,18 +15,34 @@
 <!-- модальное окно -->
     <div class="backdrop is-hidden" data-modal>
         <div class="modal">
-            <h2 class="modal-title">Оставьте свои данные, мы вам перезвоним</h2>
+            <b class="modal-title">Оставьте свои данные, мы вам перезвоним</b>
             <form class="modal-form">
                 <label for="name" class="form-field"><span class="form-title">Имя</span>
-                    <input type="name" name="name" id="name">
+                    <input class="form-input" type="name" name="name" id="name" title="Ваше Имя" required>
+                    <svg class="input-icon" width="18px" height="18px">
+                        <use href="./Images/symbol-defs.svg#icon-person-blk"></use>
+                    </svg>
                 </label>
                 <label for="tel" class="form-field"><span class="form-title">Телефон</span>
-                    <input type="tel" name="tel" id="tel">
+                    <input class="form-input" type="tel" name="tel" id="tel" pattern="[0-9]{10}" title="0501234567" required>
+                    <svg class="input-icon" width="18px" height="18px">
+                        <use href="./Images/symbol-defs.svg#icon-phone-blk"></use>
+                    </svg>
                 </label>
                 <label for="email" class="form-field"><span class="form-title">Почта</span>
-                    <input type="email" name="email" id="email">
+                    <input class="form-input" type="email" name="email" id="email" title="mail@mail.com" required>
+                    <svg class="input-icon" width="18px" height="18px">
+                        <use href="./Images/symbol-defs.svg#icon-email-blk"></use>
+                    </svg>
                 </label>
-                
+                <label class="form-field" for="comments"><span class="form-title">Комментарий</span>
+                    <textarea name="comments" placeholder="Введите текст" class="textarea"></textarea>
+                </label>
+                <div class="checkdiv">
+                    <input type="checkbox" class="checkpoint" id="check-label">
+                    <label class="check" for="check-label"><span class="checkbox">Соглашаюсь с рассылкой и принимаю <a href="#" class="offer">Условия договора</a></span></label>
+                </div>
+                <button type="submit" class="form-btn">Отправить</button>
             </form>
             <button class="close-modal" type="button" data-modal-close>
                 <svg width="11" height="11">
