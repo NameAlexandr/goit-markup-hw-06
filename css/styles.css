@@ -92,7 +92,7 @@ img {
   background-color: #fff;
   border-radius: 50%;
 
-  transition-property: opacity;
+  transition-property: fill;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -110,17 +110,18 @@ img {
 .modal .modal-form {
   display: flex;
   flex-direction: column;
+  margin-top: 12px;
 }
 .modal .form-field {
   position: relative;
   display: flex;
   flex-direction: column;
 }
-.modal .form-field:not(:last-child) {
+.form-field {
   margin-bottom: 10px;
 }
-.modal .form-field:nth-child(1) {
-  margin-top: 12px;
+.comment {
+  margin-bottom: 0;
 }
 .modal .form-title {
   font-weight: 500;
@@ -140,9 +141,7 @@ img {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal .form-input:hover {
-  outline: 1px solid var(--accent-color);
-}
+
 .modal .form-input:focus {
   outline: 1px solid var(--accent-color);
 }
@@ -181,16 +180,14 @@ img {
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
 }
-.modal .textarea:hover {
-  outline: 1px solid var(--accent-color);
-}
+
 .modal .textarea:focus {
   outline: 1px solid var(--accent-color);
 }
 .check {
   display: flex;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .checkbox {
   font-weight: normal;
@@ -843,10 +840,11 @@ address {
   margin-left: 70px;
 }
 
-.footer .subscribe-form {
+.subscribe-form {
   display: flex;
+  align-items: flex-end;
 }
-.footer .subscribe-input {
+.subscribe-input {
   width: 358px;
   height: 50px;
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -855,10 +853,9 @@ address {
   border-radius: 4px;
   background-color: inherit;
   padding-left: 16px;
-  margin-right: 12px;
   color: white;
 }
-.footer .subscribe-box {
+.subscribe-box {
   margin-left: auto;
 }
 .subscribe-box .text {
@@ -870,12 +867,13 @@ address {
   color: var(--primary-background-color);
   margin-bottom: 20px;
 }
-.footer .subscribe-button {
+.subscribe-button {
   width: 200px;
   height: 50px;
   background: #2196f3;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+  border: transparent;
   font-weight: bold;
   font-size: 16px;
   line-height: 30px;
@@ -885,8 +883,8 @@ address {
   text-align: center;
   letter-spacing: 0.06em;
   color: white;
-  margin-top: auto;
   cursor: pointer;
+  margin-left: 12px;
 }
 .footer .send {
   margin-left: 10px;
